@@ -1,7 +1,9 @@
-package Model;
+package Controller;
 
 import java.sql.*;
+
 public class Database {
+
     public static Connection makeConnection()throws Exception{
         Connection c = null;
         try {

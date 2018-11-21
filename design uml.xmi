@@ -107,7 +107,7 @@
         <UML:Attribute visibility="private" isSpecification="false" xmi.id="u9yabN4e4IAOb" type="uWL6AVuxCVMhB" name="schedule"/>
        </UML:Classifier.feature>
       </UML:Class>
-      <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="u5WLBqsNMjiUo" name="Model.Database">
+      <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="u5WLBqsNMjiUo" name="Controller.Database">
        <UML:Classifier.feature>
         <UML:Attribute visibility="private" isSpecification="false" xmi.id="utt3YIUrDmktT" type="uNk3i8HyYKZdE" name="courses"/>
        </UML:Classifier.feature>
