@@ -1,3 +1,5 @@
+package Model;
+
 public abstract class Period {
     String instName;
     String courseName;

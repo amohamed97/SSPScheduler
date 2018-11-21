@@ -35,10 +35,10 @@
         <UML:DataType visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="ub71RNsFLkpGO" name="long double"/>
         <UML:DataType visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="uNlgy1VJYHAYY" name="wchar_t"/>
         <UML:DataType visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" elementReference="uhJccmPo0Qxo7" isRoot="false" xmi.id="u9oVSAQTBid3p" name="ArrayList&lt;Grou>"/>
-        <UML:DataType visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" elementReference="uhJccmPo0Qxo7" isRoot="false" xmi.id="uSIrgLtfphCNM" name="ArrayList&lt;Group>"/>
-        <UML:DataType visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" elementReference="uGfuX8mdbJ20s" isRoot="false" xmi.id="uVawOu0Lb88MC" name="arrayList&lt;Instructor>"/>
-        <UML:DataType visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" elementReference="uhJccmPo0Qxo7" isRoot="false" xmi.id="uWL6AVuxCVMhB" name="ArrayList&lt;Period>"/>
-        <UML:DataType visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" elementReference="uhJccmPo0Qxo7" isRoot="false" xmi.id="uNk3i8HyYKZdE" name="ArrayList&lt;Course>"/>
+        <UML:DataType visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" elementReference="uhJccmPo0Qxo7" isRoot="false" xmi.id="uSIrgLtfphCNM" name="ArrayList&lt;Model.Group>"/>
+        <UML:DataType visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" elementReference="uGfuX8mdbJ20s" isRoot="false" xmi.id="uVawOu0Lb88MC" name="arrayList&lt;Model.Instructor>"/>
+        <UML:DataType visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" elementReference="uhJccmPo0Qxo7" isRoot="false" xmi.id="uWL6AVuxCVMhB" name="ArrayList&lt;Model.Period>"/>
+        <UML:DataType visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" elementReference="uhJccmPo0Qxo7" isRoot="false" xmi.id="uNk3i8HyYKZdE" name="ArrayList&lt;Model.Course>"/>
         <UML:DataType visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="u3ND6qgYM57vi" name="boolean"/>
         <UML:DataType visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="uXMJdfHHo4pno" name="byte"/>
         <UML:DataType visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="uGTDcWxiyAJgP" name="short"/>
@@ -69,25 +69,25 @@
         <UML:Attribute visibility="private" isSpecification="false" xmi.id="ux207ogXq2Xgo" type="u8ZCvdLC9fOog" name="time"/>
        </UML:Classifier.feature>
       </UML:Class>
-      <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="ugrAP5XPhTRgG" name="Lecture"/>
-      <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="uqsBklEsT8VcX" name="Tutorial"/>
-      <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="utXz4tNvhyv0r" name="Lab"/>
+      <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="ugrAP5XPhTRgG" name="Model.Lecture"/>
+      <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="uqsBklEsT8VcX" name="Model.Tutorial"/>
+      <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="utXz4tNvhyv0r" name="Model.Lab"/>
       <UML:Generalization discriminator="" visibility="public" isSpecification="false" namespace="Logical_View" child="umt3mgrN4sbWu" xmi.id="upEbz0o2iRQFB" parent="uqsBklEsT8VcX" name=""/>
       <UML:Generalization discriminator="" visibility="public" isSpecification="false" namespace="Logical_View" child="umt3mgrN4sbWu" xmi.id="uplJ7sQiamvms" parent="ugrAP5XPhTRgG" name=""/>
       <UML:Generalization discriminator="" visibility="public" isSpecification="false" namespace="Logical_View" child="umt3mgrN4sbWu" xmi.id="uULcfGluoKwj4" parent="utXz4tNvhyv0r" name=""/>
-      <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="uUUxl9dipOVwQ" name="Course">
+      <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="uUUxl9dipOVwQ" name="Model.Course">
        <UML:Classifier.feature>
         <UML:Attribute visibility="private" isSpecification="false" xmi.id="uqPre1Za6ambM" type="uVYym4DGtVXED" comment="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;" name="name"/>
         <UML:Attribute visibility="private" isSpecification="false" xmi.id="uTTgGAQ9tilyE" type="uVawOu0Lb88MC" name="instructor"/>
        </UML:Classifier.feature>
       </UML:Class>
-      <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="uilkdm4Eh4GLB" name="Instructor">
+      <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="uilkdm4Eh4GLB" name="Model.Instructor">
        <UML:Classifier.feature>
         <UML:Attribute visibility="private" isSpecification="false" xmi.id="uvGhfl8qZry2m" type="uVYym4DGtVXED" name="name"/>
         <UML:Attribute visibility="private" isSpecification="false" xmi.id="uszfPBu6dfadP" type="uSIrgLtfphCNM" name="groups"/>
        </UML:Classifier.feature>
       </UML:Class>
-      <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="uR6Ja1rIY09PT" name="Group">
+      <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="uR6Ja1rIY09PT" name="Model.Group">
        <UML:Classifier.feature>
         <UML:Attribute visibility="private" isSpecification="false" xmi.id="uWSTABhHFiDiD" type="ugrAP5XPhTRgG" name="lecture"/>
         <UML:Attribute visibility="private" isSpecification="false" xmi.id="ubGsfOyqB4O3H" type="uqsBklEsT8VcX" name="tutorial"/>
@@ -99,22 +99,22 @@
       <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="ubbcxbl4DQ9y5" name="integer"/>
       <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="uGfuX8mdbJ20s" name="arrayList"/>
       <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="uhJccmPo0Qxo7" name="ArrayList"/>
-      <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="ukh7HZfON6yUA" name="ArrayList of Group"/>
+      <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="ukh7HZfON6yUA" name="ArrayList of Model.Group"/>
       <UML:Dependency visibility="public" isSpecification="false" namespace="Logical_View" supplier="uR6Ja1rIY09PT" xmi.id="uvShyILIKio3h" client="uilkdm4Eh4GLB" name=""/>
       <UML:Dependency visibility="public" isSpecification="false" namespace="Logical_View" supplier="uilkdm4Eh4GLB" xmi.id="usyIOrgKxzsL4" client="uUUxl9dipOVwQ" name=""/>
-      <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="uuVgKiKLaZbFw" name="Schedule">
+      <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="uuVgKiKLaZbFw" name="Model.Schedule">
        <UML:Classifier.feature>
         <UML:Attribute visibility="private" isSpecification="false" xmi.id="u9yabN4e4IAOb" type="uWL6AVuxCVMhB" name="schedule"/>
        </UML:Classifier.feature>
       </UML:Class>
-      <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="u5WLBqsNMjiUo" name="Database">
+      <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="u5WLBqsNMjiUo" name="Model.Database">
        <UML:Classifier.feature>
         <UML:Attribute visibility="private" isSpecification="false" xmi.id="utt3YIUrDmktT" type="uNk3i8HyYKZdE" name="courses"/>
        </UML:Classifier.feature>
       </UML:Class>
       <UML:Dependency visibility="public" isSpecification="false" namespace="Logical_View" supplier="uUUxl9dipOVwQ" xmi.id="urMBXX7mCvJ5p" client="u5WLBqsNMjiUo" name=""/>
       <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="uXQPrBH1pw9pd" name="inter"/>
-      <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="u8ZCvdLC9fOog" name="Time"/>
+      <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="u8ZCvdLC9fOog" name="Model.Time"/>
      </UML:Namespace.ownedElement>
      <XMI.extension xmi.extender="umbrello">
       <diagrams resolution="96">

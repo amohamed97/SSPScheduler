@@ -1,3 +1,5 @@
+package Model;
+
 public class Time {
     int day;
     int from;
