@@ -16,24 +16,18 @@ public class Schedule {
         Tutorial tut;
         boolean added = false;
         ArrayList<Course> courses = input.getCourses();
-//        ArrayList<Instructor> instructors = input.getInstructors();
-//        Comparator<Course> crPrComp = new Comparator<Course>() {
-//            @Override
-//            public int compare(Course o1, Course o2) {
-//                return o2.getPriority()-o1.getPriority();
-//            }
-//        };
-//
-//        Comparator<Instructor> inPrComp = new Comparator<Instructor>() {
-//            @Override
-//            public int compare(Instructor o1, Instructor o2) {
-//                return o2.getPriority()-o1.getPriority();
-//            }
-//        };
-//        courses.sort(crPrComp);
-//        for (int i = 0; i < courses.size(); i++) {
-//            courses.get(i).instructors.sort(inPrComp);
-//        }
+        ArrayList<Instructor> instructors = input.getInstructors();
+        courses.get(2).setPriority(5);
+        courses.get(1).setPriority(3);
+        courses.get(2).getInstructors().get(0).setPriority(5);
+        courses.get(1).getInstructors().get(1).setPriority(3);
+        Comparator<Course> crPrComp = (o1, o2) -> o2.getPriority()-o1.getPriority();
+
+        Comparator<Instructor> inPrComp = (o1, o2) -> o2.getPriority()-o1.getPriority();
+        courses.sort(crPrComp);
+        for (int i = 0; i < courses.size(); i++) {
+            courses.get(i).instructors.sort(inPrComp);
+        }
         for (int i = 0; i < courses.size(); i++) {
             for (int j = 0; j < courses.get(i).getInstructors().size(); j++) {
                 for (int k = 0; k <courses.get(i).getInstructors().get(j).getGroups().size() ; k++) {
