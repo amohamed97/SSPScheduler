@@ -6,4 +6,7 @@ public class Lab extends Period {
         super(instName, courseName, place, type, time);
         super.periodType = "Model.Lab";
     }
+
+    public Lab() {
+    }
 }

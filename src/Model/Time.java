@@ -12,6 +12,10 @@ public class Time {
         this.day = day;
     }
 
+    public Time(){
+
+    }
+
     public int getDay() {
         return day;
     }
@@ -22,5 +26,17 @@ public class Time {
 
     public int getTo() {
         return to;
+    }
+
+    public void setDay(int day) {
+        this.day = day;
+    }
+
+    public void setFrom(int from) {
+        this.from = from;
+    }
+
+    public void setTo(int to) {
+        this.to = to;
     }
 }

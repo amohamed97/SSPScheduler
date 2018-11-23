@@ -90,8 +90,8 @@
       <UML:Class visibility="public" isSpecification="false" namespace="Logical_View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="uR6Ja1rIY09PT" name="Model.Group">
        <UML:Classifier.feature>
         <UML:Attribute visibility="private" isSpecification="false" xmi.id="uWSTABhHFiDiD" type="ugrAP5XPhTRgG" name="lecture"/>
-        <UML:Attribute visibility="private" isSpecification="false" xmi.id="ubGsfOyqB4O3H" type="uqsBklEsT8VcX" name="tutorial"/>
-        <UML:Attribute visibility="private" isSpecification="false" xmi.id="uCiQEDJcrvNbP" type="utXz4tNvhyv0r" name="lab"/>
+        <UML:Attribute visibility="private" isSpecification="false" xmi.id="ubGsfOyqB4O3H" type="uqsBklEsT8VcX" name="tutorials"/>
+        <UML:Attribute visibility="private" isSpecification="false" xmi.id="uCiQEDJcrvNbP" type="utXz4tNvhyv0r" name="labs"/>
         <UML:Attribute visibility="private" isSpecification="false" xmi.id="uOi1b0Uj0UEfF" type="ubbcxbl4DQ9y5" name="number"/>
        </UML:Classifier.feature>
       </UML:Class>
@@ -163,14 +163,14 @@
            <startpoint startx="-1058" starty="-636"/>
            <endpoint endx="-1246" endy="-545"/>
           </linepath>
-          <floatingtext linecolor="#ff0000" usesdiagramfillcolor="1" linewidth="0" textcolor="none" usesdiagramusefillcolor="1" x="-1245" showstereotype="1" y="-564" text="tutorial" font="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0" localid="uFRFAscToPup7" pretext="-" role="710" width="46" isinstance="0" posttext="" usefillcolor="1" fillcolor="none" xmi.id="udNHUu3WEuBlc" autoresize="1" height="17"/>
+          <floatingtext linecolor="#ff0000" usesdiagramfillcolor="1" linewidth="0" textcolor="none" usesdiagramusefillcolor="1" x="-1245" showstereotype="1" y="-564" text="tutorials" font="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0" localid="uFRFAscToPup7" pretext="-" role="710" width="46" isinstance="0" posttext="" usefillcolor="1" fillcolor="none" xmi.id="udNHUu3WEuBlc" autoresize="1" height="17"/>
          </assocwidget>
          <assocwidget linecolor="#ff0000" indexa="1" usesdiagramfillcolor="1" widgetbid="utXz4tNvhyv0r" indexb="1" linewidth="0" seqnum="" textcolor="none" usesdiagramusefillcolor="1" totalcounta="2" totalcountb="2" widgetaid="uR6Ja1rIY09PT" font="Sans Serif,9,-1,0,50,0,0,0,0,0" visibilityA="1" visibilityB="1" usefillcolor="1" fillcolor="none" changeabilityA="900" xmi.id="uCiQEDJcrvNbP" changeabilityB="900" autoresize="1" type="510">
           <linepath layout="Polyline">
            <startpoint startx="-1058" starty="-636"/>
            <endpoint endx="-1133.63" endy="-563.52"/>
           </linepath>
-          <floatingtext linecolor="#ff0000" usesdiagramfillcolor="1" linewidth="0" textcolor="none" usesdiagramusefillcolor="1" x="-1134" showstereotype="1" y="-586.5" text="lab" font="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0" localid="uvSiQbLvGuV0p" pretext="-" role="710" width="26" isinstance="0" posttext="" usefillcolor="1" fillcolor="none" xmi.id="uzHVd2oxATa7u" autoresize="1" height="17"/>
+          <floatingtext linecolor="#ff0000" usesdiagramfillcolor="1" linewidth="0" textcolor="none" usesdiagramusefillcolor="1" x="-1134" showstereotype="1" y="-586.5" text="labs" font="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0" localid="uvSiQbLvGuV0p" pretext="-" role="710" width="26" isinstance="0" posttext="" usefillcolor="1" fillcolor="none" xmi.id="uzHVd2oxATa7u" autoresize="1" height="17"/>
          </assocwidget>
          <assocwidget linecolor="#ff0000" indexa="1" usesdiagramfillcolor="1" widgetbid="u8ZCvdLC9fOog" indexb="1" linewidth="0" seqnum="" textcolor="none" usesdiagramusefillcolor="1" totalcounta="2" totalcountb="2" widgetaid="umt3mgrN4sbWu" font="Sans Serif,9,-1,0,50,0,0,0,0,0" visibilityA="1" visibilityB="1" usefillcolor="1" fillcolor="none" changeabilityA="900" xmi.id="ux207ogXq2Xgo" changeabilityB="900" autoresize="1" type="510">
           <linepath layout="Polyline">

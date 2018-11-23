@@ -5,5 +5,8 @@ public class Tutorial extends Period{
         super(instName, courseName, place, type, time);
         super.periodType = "Tut";
     }
+
+    public Tutorial() {
+    }
 }
 

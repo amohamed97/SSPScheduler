@@ -5,4 +5,7 @@ public class Lecture extends Period {
         super(instName, courseName, place, type, time);
         super.periodType = "Lec";
     }
+
+    public Lecture() {
+    }
 }

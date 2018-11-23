@@ -18,6 +18,10 @@ public abstract class Period {
         this.length = time.to - time.from + 1;
     }
 
+    public Period(){
+
+    }
+
     public String getInstName() {
         return instName;
     }
@@ -44,5 +48,34 @@ public abstract class Period {
 
     public void printMe(){
         System.out.print(courseName+"-"+periodType+" ");
+    }
+
+    public void setInstName(String instName) {
+        this.instName = instName;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public void setTime(Time time) {
+        this.time = time;
+        this.length = time.to - time.from + 1;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    public void setPeriodType(String periodType) {
+        this.periodType = periodType;
     }
 }
