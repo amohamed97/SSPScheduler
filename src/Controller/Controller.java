@@ -8,9 +8,11 @@ public class Controller {
     Schedule schedule;
     Stack addedGroups;
     Set<Integer> daysTaken = new HashSet<>();
+    Node<Group> root = new Node<>(null);
 
+    public void makeTree(){
 
-
+    }
     public void makeSchedule() throws Exception {
         schedule = new Schedule();
         Input input = new Input();
