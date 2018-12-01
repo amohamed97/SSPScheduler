@@ -78,4 +78,8 @@ public abstract class Period {
     public void setPeriodType(String periodType) {
         this.periodType = periodType;
     }
+
+    public String getPeriodType() {
+        return periodType;
+    }
 }

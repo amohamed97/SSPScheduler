@@ -36,4 +36,5 @@ public class Course {
     public int getPriority() {
         return priority;
     }
+
 }
