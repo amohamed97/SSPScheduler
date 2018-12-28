@@ -11,3 +11,4 @@ Project Missions :
     -When adding the first course , add the group with the minimum number of days , for the next courses add the group
     with the most common days with the added groups (array of used days) (Minimum days solution)
     -When excluding days from the normal 6 days , change the index of for loops  (Excluding days)
+    -Sort complete paths

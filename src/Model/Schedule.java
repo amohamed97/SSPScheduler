@@ -8,6 +8,9 @@ import java.util.Comparator;
 public class Schedule {
     public Period[][] schedule = new Period[6][12];
     Input input;
+    Boolean[] days = new Boolean[6];
+    int daysTaken;
+    int priorityValue;
 
 
     public boolean checkClash(Period period){
@@ -24,7 +27,11 @@ public class Schedule {
     public void addPeriod(Period period){
         for (int i = 0; i < period.getLength(); i++) {
             schedule[period.getTime().getDay()][period.getTime().getFrom()+i] = period;
-        }
+         }
+         if(!days[period.getTime().getDay()]){
+            daysTaken++;
+            days[period.getTime().getDay()] = true;
+         }
     }
 
     public void printSchedule(){
@@ -42,6 +49,22 @@ public class Schedule {
 
     public Period[][] getSchedule() {
         return schedule;
+    }
+
+    public int getDaysTaken() {
+        return daysTaken;
+    }
+
+    public int getPriorityValue() {
+        return priorityValue;
+    }
+
+    public void setPriorityValue(int priorityValue) {
+        this.priorityValue = priorityValue;
+    }
+
+    public void addToPriorityValue(int value){
+        this.priorityValue+=value;
     }
 }
 
