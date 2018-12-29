@@ -55,7 +55,8 @@ public class Input {
                 t.setTo(rs.getInt("TUT1_TO"));
                 tut.setTime(t);
                 tut.setPeriodType(rs.getString("TUT1_PER_TYPE"));
-                g.addTutorial(tut);
+                if(!tut.getCourseName().equals(""))
+                    g.addTutorial(tut);
 
                 tut = new Tutorial();
                 t = new Time();
@@ -68,7 +69,10 @@ public class Input {
                 t.setTo(rs.getInt("TUT2_TO"));
                 tut.setTime(t);
                 tut.setPeriodType(rs.getString("TUT2_PER_TYPE"));
-                g.addTutorial(tut);
+                if(!tut.getCourseName().equals(""))
+                    g.addTutorial(tut);
+
+
 
                 Lab lab = new Lab();
                 t = new Time();
@@ -81,7 +85,8 @@ public class Input {
                 t.setTo(rs.getInt("LAB1_TO"));
                 lab.setTime(t);
                 lab.setPeriodType(rs.getString("LAB1_PER_TYPE"));
-                g.addLab(lab);
+                if(!lab.getCourseName().equals(""))
+                    g.addLab(lab);
 
                 lab = new Lab();
                 t = new Time();
@@ -94,7 +99,8 @@ public class Input {
                 t.setTo(rs.getInt("LAB2_TO"));
                 lab.setTime(t);
                 lab.setPeriodType(rs.getString("LAB2_PER_TYPE"));
-                g.addLab(lab);
+                if(!lab.getCourseName().equals(""))
+                    g.addLab(lab);
 
                 gs.add(g);
             }
@@ -147,26 +153,3 @@ public class Input {
         return insts;
     }
 }
-/*inst = new Instructor(gs.get(0).getLecture().getInstName(),gs.get(0).getLecture().getCourseName(),gs.get(0));
-        insts.add(inst);
-        Course course = new Course(gs.get(0).getLecture().getCourseName(),inst);
-        courses.add(course);
-        for (int i = 1; i < gs.size(); i++) {
-            Group g = gs.get(i);
-            for (int j = 0; j < insts.size(); j++) {
-                if(g.getLecture().getInstName().equals(insts.get(j).getName())){
-                    for (int k = 0; k < courses.size(); k++) {
-                        if(g.getLecture().getCourseName().equals(insts.get(j).getCourseName())){
-                            insts.get(j).addGroup(g);
-                        }
-                        else{
-                            inst.getGroups().clear();
-                            inst.addGroup(g);
-                            course = new Course(g.getLecture().getCourseName(),inst);
-                            courses.add(course);
-                        }
-                    }
-                }
-            }
-            inst =
-        }*/

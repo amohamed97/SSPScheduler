@@ -12,12 +12,12 @@ public class Node {
 
     public Node(Group data) {
         this.data = data;
+        this.addToSchedule();
     }
 
-    public Node(Group data, Node parent , Schedule sch) {
+    public Node(Group data, Schedule sch) {
         this.data = data;
-        this.parent = parent;
-        this.schedule = sch;
+        this.schedule.clone(sch);
         this.addToSchedule();
 
     }
@@ -27,17 +27,11 @@ public class Node {
     }
 
     public void setParent(Node parent) {
-        parent.addChild(this);
         this.parent = parent;
     }
 
     public void addChild(Group data) {
-        Node child = new Node(data);
-        child.setParent(this);
-        this.children.add(child);
-    }
-
-    public void addChild(Node child) {
+        Node child = new Node(data,this.getSchedule());
         child.setParent(this);
         this.children.add(child);
     }
@@ -67,7 +61,11 @@ public class Node {
         return parent;
     }
 
-    public boolean checkClash(Model.Group group , Schedule sch){
+    public void setSchedule(Schedule schedule) {
+        this.schedule = schedule;
+    }
+
+    public boolean checkClash(Group group , Schedule sch){
         if(sch.checkClash(group.getLecture())){
             return true;
         }

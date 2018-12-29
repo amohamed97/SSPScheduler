@@ -8,10 +8,9 @@ import java.util.Comparator;
 public class Schedule {
     public Period[][] schedule = new Period[6][12];
     Input input;
-    Boolean[] days = new Boolean[6];
+    Boolean[] days = new Boolean[]{false,false,false,false,false,false};
     int daysTaken;
     int priorityValue;
-
 
     public boolean checkClash(Period period){
         for (int i = 0; i < period.getLength(); i++) {
@@ -66,26 +65,25 @@ public class Schedule {
     public void addToPriorityValue(int value){
         this.priorityValue+=value;
     }
-}
 
-
-//schedule[lec.getTime().getDay()][lec.getTime().getFrom()]
-
-/*for (int i = 0; i < courses.size(); i++) {
-            for (int j = 0; j < courses.get(i).getInstructors().size(); j++) {
-                for (int k = 0; k <courses.get(i).getInstructors().get(j).getGroups().size() ; k++) {
-                     lec = courses.get(i).getInstructors().get(j).getGroups().get(k).getLecture();
-                     tut = courses.get(i).getInstructors().get(j).getGroups().get(k).getTutorials();
-                     if(!checkClash(lec) || !checkClash(tut)){
-                        addPeriod(lec);
-                        addPeriod(tut);
-                        added = true;
-                        break;
-                     }
-                }
-                if(added) {
-                    added = false;
-                    break;
-                }
+    public void clone(Schedule schedule) {
+        for(int i = 0 ; i < 6 ; i++){
+            for(int j = 0 ; j < 12 ; j++){
+                this.schedule[i][j] = schedule.getSchedule()[i][j];
             }
-        }*/
+        }
+        this.priorityValue = schedule.getPriorityValue();
+        this.daysTaken = schedule.getDaysTaken();
+        for(int i = 0 ; i < 6 ; i++){
+            this.days[i] = schedule.getDays()[i];
+        }
+    }
+
+    public Boolean[] getDays() {
+        return days;
+    }
+
+    public void setDays(Boolean[] days) {
+        this.days = days;
+    }
+}

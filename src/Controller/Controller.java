@@ -17,11 +17,8 @@ public class Controller {
 
         schedule = new Schedule();
         Input input = new Input();
-//        levels.get(0).add((Node) level);
-//        levels.add(level);
         ArrayList<Course> courses = input.getCourses();
         ArrayList<Instructor> instructors = input.getInstructors();
-//        Setting Priorities
         courses.get(2).setPriority(5);
         courses.get(1).setPriority(3);
         courses.get(2).getInstructors().get(0).setPriority(5);
@@ -35,22 +32,25 @@ public class Controller {
 //        }
         for(int i = 0; i < courses.get(0).getInstructors().size();i++){
             for(int j = 0; j< courses.get(0).getInstructors().get(i).getGroups().size();j++){
-                level.add(new Node(courses.get(0).getInstructors().get(i).getGroups().get(j)));
+                Node n = new Node(courses.get(0).getInstructors().get(i).getGroups().get(j));
+                n.getSchedule().addToPriorityValue(courses.get(0).getInstructors().get(i).getPriority());
+                level.add(n);
             }
         }
         levels.add(level);
-        for (int i = 0; i < courses.size(); i++) {
+
+        for (int i = 1; i < courses.size(); i++) {
             levels.add(new ArrayList<Node>());
             for (int j = 0; j < courses.get(i).getInstructors().size(); j++) {
                 for (int k = 0; k < courses.get(i).getInstructors().get(j).getGroups().size(); k++) {
-                    for(int o = 0 ; o < levels.get(i).size() ; o++){
-                        if(!levels.get(i).get(o).checkClash(courses.get(i).getInstructors().get(j).getGroups().get(k),
-                                levels.get(i).get(o).getSchedule())) {
-                            levels.get(i).get(o).getSchedule().addToPriorityValue(courses.get(i).getInstructors().get(j).getPriority());
-                            levels.get(i).get(o).addChild(courses.get(i).getInstructors().get(j).getGroups().get(k));
-                            levels.get(i).add(levels.get(i).get(o).getChildren().get(levels.get(i).get(o).getChildren().size()-1));
-                            if(i+1 == courses.size()){
-                                completed.add(levels.get(i).get(o).getChildren().get(levels.get(i).get(o).getChildren().size()-1));
+                    for(int o = 0 ; o < levels.get(i-1).size() ; o++){
+                        if(!levels.get(i-1).get(o).checkClash(courses.get(i).getInstructors().get(j).getGroups().get(k),
+                                levels.get(i-1).get(o).getSchedule())) {
+                            levels.get(i-1).get(o).getSchedule().addToPriorityValue(courses.get(i).getInstructors().get(j).getPriority());
+                            levels.get(i-1).get(o).addChild(courses.get(i).getInstructors().get(j).getGroups().get(k));
+                            levels.get(i).add(levels.get(i-1).get(o).getChildren().get(levels.get(i-1).get(o).getChildren().size()-1));
+                            if(i == courses.size()-1){
+                                completed.add(levels.get(i-1).get(o).getChildren().get(levels.get(i-1).get(o).getChildren().size()-1));
                             }
                         }
                     }
@@ -59,13 +59,16 @@ public class Controller {
         }
 
         Comparator<Node> cnPrComp = (o1, o2) -> o2.getSchedule().getPriorityValue()-o1.getSchedule().getPriorityValue();
-        Comparator<Node> ctPrComp = (o1, o2) -> o2.getSchedule().getDaysTaken()-o1.getSchedule().getDaysTaken();
+        Comparator<Node> ctPrComp = (o1, o2) -> o1.getSchedule().getDaysTaken()-o2.getSchedule().getDaysTaken();
         completed.sort(cnPrComp);
         int ii = 1;
         int tempPri = completed.get(ii).getSchedule().getPriorityValue();
+        completedPrDupl.add(completed.get(0));
         while(completed.get(0).getSchedule().getPriorityValue() == tempPri ){
             completedPrDupl.add(completed.get(ii));
             ii++;
+            if(ii == completed.size())
+                break;
             tempPri = completed.get(ii).getSchedule().getPriorityValue();
         }
         if(completedPrDupl.size() != 0){
@@ -76,49 +79,6 @@ public class Controller {
             schedule = completed.get(0).getSchedule();
         }
     }
-
-//    public void makeSchedule() throws Exception {
-//        schedule = new Schedule();
-//        Input input = new Input();
-//        Lecture lec;
-//        Tutorial tut;
-//        boolean added = false;
-//        ArrayList<Course> courses = input.getCourses();
-//        ArrayList<Instructor> instructors = input.getInstructors();
-////        Setting Priorities
-////        courses.get(2).setPriority(5);
-////        courses.get(1).setPriority(3);
-////        courses.get(2).getInstructors().get(0).setPriority(5);
-////        courses.get(1).getInstructors().get(1).setPriority(3);
-//        Comparator<Course> crPrComp = (o1, o2) -> o2.getPriority()-o1.getPriority();
-//
-//        Comparator<Instructor> inPrComp = (o1, o2) -> o2.getPriority()-o1.getPriority();
-//        courses.sort(crPrComp);
-//        for (int i = 0; i < courses.size(); i++) {
-//            courses.get(i).getInstructors().sort(inPrComp);
-//        }
-//        for (int i = 0; i < courses.size(); i++) {
-//            for (int j = 0; j < courses.get(i).getInstructors().size(); j++) {
-//                for (int k = 0; k <courses.get(i).getInstructors().get(j).getGroups().size() ; k++) {
-//                    lec = courses.get(i).getInstructors().get(j).getGroups().get(k).getLecture();
-//                    tut = courses.get(i).getInstructors().get(j).getGroups().get(k).getTutorials().get(0);
-//                    if(!schedule.checkClash(lec) && !schedule.checkClash(tut)){
-//                        schedule.addPeriod(lec);
-//                        schedule.addPeriod(tut);
-//                        added = true;
-//                        break;
-//                    }
-//                }
-//                if(added) {
-//                    added = false;
-//                    break;
-//                }
-//            }
-//        }
-//
-//
-//
-//    }
 
     public Schedule getSchedule() {
         return schedule;
