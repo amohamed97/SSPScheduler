@@ -26,7 +26,6 @@ public class Controller {
         courses.get(2).getInstructors().get(1).setPriority(5);
 //        courses.get(1).getInstructors().get(1).setPriority(3);
         Comparator<Course> crPrComp = (o1, o2) -> o2.getPriority()-o1.getPriority();
-
         Comparator<Instructor> inPrComp = (o1, o2) -> o2.getPriority()-o1.getPriority();
         courses.sort(crPrComp);
         for (int i = 0; i < courses.size(); i++) {
@@ -100,8 +99,10 @@ public class Controller {
                     break;
                 }
             }
-            completedPrDupl.sort(ctPrComp);
-            alts.add(completedPrDupl.get(0).getSchedule());
+            if(completedPrDupl.size() != 0){
+                completedPrDupl.sort(ctPrComp);
+                alts.add(completedPrDupl.get(0).getSchedule());
+            }
             perfect.getData().setAvailable(true);
         }
     }
