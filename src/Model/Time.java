@@ -20,8 +20,7 @@ public class Time {
         return day;
     }
 
-    public int getFrom() {
-        return from;
+    public int getFrom() { return from;
     }
 
     public int getTo() {

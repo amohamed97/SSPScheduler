@@ -12,3 +12,6 @@ Project Missions :
     with the most common days with the added groups (array of used days) (Minimum days solution)
     -When excluding days from the normal 6 days , change the index of for loops  (Excluding days)
     -Sort complete paths
+    
+    -other terms courses inclusion option
+    -handling distributed lectures

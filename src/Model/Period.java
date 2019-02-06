@@ -1,6 +1,7 @@
 package Model;
 
 public abstract class Period {
+    int gNum;
     String instName;
     String courseName;
     String place;
@@ -47,7 +48,11 @@ public abstract class Period {
     }
 
     public void printMe(){
-        System.out.print(courseName+"-"+periodType+" ");
+        String str = "("+gNum+")"+courseName+"-"+periodType;
+        System.out.print(str);
+        for (int i = 0; i < 38-str.length(); i++) {
+            System.out.print(" ");
+        }
     }
 
     public void setInstName(String instName) {
@@ -82,4 +87,13 @@ public abstract class Period {
     public String getPeriodType() {
         return periodType;
     }
+
+    public int getgNum() {
+        return gNum;
+    }
+
+    public void setgNum(int gNum) {
+        this.gNum = gNum;
+    }
 }
+

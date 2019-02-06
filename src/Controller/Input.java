@@ -33,6 +33,7 @@ public class Input {
                 Time t = new Time();
                 g.setNumber(rs.getInt("NUM"));
                 Lecture l = new Lecture();
+                l.setgNum(g.getNumber());
                 l.setInstName(rs.getString("LEC_INST_NAME"));
                 l.setCourseName(rs.getString("LEC_CRS_NAME"));
                 l.setPlace(rs.getString("LEC_PLACE"));

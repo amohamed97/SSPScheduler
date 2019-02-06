@@ -6,6 +6,7 @@ import java.util.*;
 
 public class Controller {
     Schedule schedule;
+    List<Schedule> alts = new ArrayList<>();
     private List<List<Node>> levels = new ArrayList<List<Node>>();
     private List<Node> level = new ArrayList<Node>();
     private ArrayList<Node> completed = new ArrayList();
@@ -16,20 +17,21 @@ public class Controller {
     public void makeSchedule() throws Exception {
 
         schedule = new Schedule();
+        Node perfect;
         Input input = new Input();
         ArrayList<Course> courses = input.getCourses();
         ArrayList<Instructor> instructors = input.getInstructors();
         courses.get(2).setPriority(5);
-        courses.get(1).setPriority(3);
-        courses.get(2).getInstructors().get(0).setPriority(5);
-        courses.get(1).getInstructors().get(1).setPriority(3);
+//        courses.get(1).setPriority(3);
+        courses.get(2).getInstructors().get(1).setPriority(5);
+//        courses.get(1).getInstructors().get(1).setPriority(3);
         Comparator<Course> crPrComp = (o1, o2) -> o2.getPriority()-o1.getPriority();
-//
-//        Comparator<Instructor> inPrComp = (o1, o2) -> o2.getPriority()-o1.getPriority();
+
+        Comparator<Instructor> inPrComp = (o1, o2) -> o2.getPriority()-o1.getPriority();
         courses.sort(crPrComp);
-//        for (int i = 0; i < courses.size(); i++) {
-//            courses.get(i).getInstructors().sort(inPrComp);
-//        }
+        for (int i = 0; i < courses.size(); i++) {
+            courses.get(i).getInstructors().sort(inPrComp);
+        }
         for(int i = 0; i < courses.get(0).getInstructors().size();i++){
             for(int j = 0; j< courses.get(0).getInstructors().get(i).getGroups().size();j++){
                 Node n = new Node(courses.get(0).getInstructors().get(i).getGroups().get(j));
@@ -71,12 +73,36 @@ public class Controller {
                 break;
             tempPri = completed.get(ii).getSchedule().getPriorityValue();
         }
-        if(completedPrDupl.size() != 0){
+        completedPrDupl.sort(ctPrComp);
+        schedule = completedPrDupl.get(0).getSchedule();
+        perfect = completedPrDupl.get(0);
+        for(int i = 0; i < courses.size(); i++){
+            completedPrDupl.clear();
+            if(i != 0){
+                perfect = perfect.getParent();
+            }
+            System.out.println(perfect.getData().getLecture().getCourseName()+"---");
+            perfect.getData().setAvailable(false);
+            for (int j = 0; j < completed.size() ; j++) {
+                if(completed.get(j).allAvailable()){
+                    completedPrDupl.add(completed.get(j));
+                    ii=1;
+                    tempPri = completed.get(j+ii).getSchedule().getPriorityValue();
+                    while(completed.get(j).getSchedule().getPriorityValue() == tempPri){
+                        if(completed.get(j+ii).allAvailable()){
+                            completedPrDupl.add(completed.get(j+ii));
+                        }
+                        ii++;
+                        if(j+ii == completed.size())
+                            break;
+                        tempPri = completed.get(j+ii).getSchedule().getPriorityValue();
+                    }
+                    break;
+                }
+            }
             completedPrDupl.sort(ctPrComp);
-            schedule = completedPrDupl.get(0).getSchedule();
-        }
-        else{
-            schedule = completed.get(0).getSchedule();
+            alts.add(completedPrDupl.get(0).getSchedule());
+            perfect.getData().setAvailable(true);
         }
     }
 
@@ -84,6 +110,8 @@ public class Controller {
         return schedule;
     }
 
-
+    public List<Schedule> getAlts() {
+        return alts;
+    }
 }
 

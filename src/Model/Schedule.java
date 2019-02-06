@@ -10,17 +10,17 @@ public class Schedule {
     Input input;
     Boolean[] days = new Boolean[]{false,false,false,false,false,false};
     int daysTaken;
-    int priorityValue;
+    int priorityValue; 
 
     public boolean checkClash(Period period){
         for (int i = 0; i < period.getLength(); i++) {
             if(schedule[period.getTime().getDay()][period.getTime().getFrom()+i]!=null) {
                 return true;
             }
-            else
-                return false;
+//            else
+//                return false;
         }
-        return true;
+        return false;
     }
 
     public void addPeriod(Period period){
@@ -38,7 +38,7 @@ public class Schedule {
             System.out.print(i + " ");
             for (int j = 0; j < 12 ; j++) {
                 if(schedule[i][j] == null)
-                    System.out.print(j);
+                    System.out.print("                  "+j+"                   ");
                 else
                     schedule[i][j].printMe();
             }

@@ -93,6 +93,19 @@ public class Node {
 
     }
 
+    public boolean allAvailable(){
+        Node current = this;
+        while(current!=null){
+            if(!current.getData().isAvailable())
+                return false;
+            else{
+                current = current.getParent();
+            }
+
+        }
+        return true;
+    }
+
     public Schedule getSchedule() {
         return schedule;
     }

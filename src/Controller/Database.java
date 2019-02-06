@@ -8,7 +8,7 @@ public class Database {
         Connection c = null;
         try {
             Class.forName("org.sqlite.JDBC");
-            c = DriverManager.getConnection("jdbc:sqlite:db/DB.db");
+            c = DriverManager.getConnection("jdbc:sqlite:db/6th-term.db");
             System.out.println("connected");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
