@@ -12,11 +12,11 @@ public class Main {
         Controller controller = new Controller();
         controller.makeSchedule();
         controller.getSchedule().printSchedule();
-        for (int i = 0; i < controller.getAlts().size(); i++) {
+        for (int i = 0; i < controller.getAlternatives().size(); i++) {
             System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------" +
                     "------------------------------------------------------------------------------------------------------" +
                     "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
-            controller.getAlts().get(i).printSchedule();
+            controller.getAlternatives().get(i).printSchedule();
         }
 
         long stopTime = System.currentTimeMillis();
