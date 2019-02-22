@@ -3,10 +3,10 @@ package Model;
 import java.util.ArrayList;
 
 public class Instructor {
-    String name;
-    String  courseName;
-    int priority;
-    ArrayList<Group> groups = new ArrayList<>();
+    private String name;
+    private String  courseName;
+    private int priority;
+    private ArrayList<Group> groups = new ArrayList<>();
 
     public Instructor(String name, ArrayList<Group> groups) {
         this.name = name;

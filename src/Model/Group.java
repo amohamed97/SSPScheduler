@@ -6,12 +6,12 @@ import java.util.Set;
 import java.util.SortedSet;
 
 public class Group {
-    Lecture lecture;
-    ArrayList<Tutorial> tutorials = new ArrayList<>();
-    ArrayList<Lab> labs = new ArrayList<>();
-    int number;
-    Set<Integer> daysTaken;
-    boolean available;
+    private Lecture lecture;
+    private ArrayList<Tutorial> tutorials = new ArrayList<>();
+    private ArrayList<Lab> labs = new ArrayList<>();
+    private int number;
+    private Set<Integer> daysTaken;
+    private boolean available;
 
     public Group(Lecture lecture, ArrayList<Tutorial> tutorilas, ArrayList<Lab> labs, int number) {
         this.lecture = lecture;

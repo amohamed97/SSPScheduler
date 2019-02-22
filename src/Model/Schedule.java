@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 public class Schedule {
-    public Period[][] schedule = new Period[6][12];
-    Input input;
-    Boolean[] days = new Boolean[]{false,false,false,false,false,false};
-    int daysTaken;
-    int priorityValue; 
+    private Period[][] schedule = new Period[6][12];
+//    private Input input;
+    private Boolean[] days = new Boolean[]{false,false,false,false,false,false};
+    private int daysTaken;
+    private int priorityValue;
 
     public boolean checkClash(Period period){
         for (int i = 0; i < period.getLength(); i++) {

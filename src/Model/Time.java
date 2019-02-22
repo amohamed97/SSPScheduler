@@ -1,9 +1,9 @@
 package Model;
 
 public class Time {
-    int day;
-    int from;
-    int to;
+    private int day;
+    private int from;
+    private int to;
 
     public Time(int from, int to, int day) {
 

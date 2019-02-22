@@ -7,10 +7,10 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class Input {
-    ArrayList<Course> courses = new ArrayList();
-    ArrayList<Instructor> insts = new ArrayList();
-    ArrayList<Group> gs = new ArrayList();
-    Connection c = Database.makeConnection();
+    private ArrayList<Course> courses = new ArrayList();
+    private ArrayList<Instructor> insts = new ArrayList();
+    private ArrayList<Group> gs = new ArrayList();
+    private Connection c = Database.makeConnection();
 
     public Input() throws Exception {
         read();

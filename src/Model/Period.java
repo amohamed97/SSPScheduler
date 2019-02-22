@@ -1,14 +1,14 @@
 package Model;
 
 public abstract class Period {
-    int gNum;
-    String instName;
-    String courseName;
-    String place;
-    int type;
-    Time time;
-    int length;
-    String periodType;
+    private int gNum;
+    private String instName;
+    private String courseName;
+    private String place;
+    private int type;
+    private Time time;
+    private int length;
+    private String periodType;
 
     public Period(String instName, String courseName, String place, int type, Time time) {
         this.instName = instName;
@@ -16,7 +16,7 @@ public abstract class Period {
         this.place = place;
         this.type = type;
         this.time = time;
-        this.length = time.to - time.from + 1;
+        this.length = time.getTo() - time.getFrom() + 1;
     }
 
     public Period(){
@@ -73,7 +73,7 @@ public abstract class Period {
 
     public void setTime(Time time) {
         this.time = time;
-        this.length = time.to - time.from + 1;
+        this.length = time.getTo() - time.getFrom() + 1;
     }
 
     public void setLength(int length) {

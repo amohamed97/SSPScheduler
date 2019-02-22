@@ -3,9 +3,9 @@ package Model;
 import java.util.ArrayList;
 
 public class Course {
-    String name;
-    int priority;
-    ArrayList<Instructor> instructors = new ArrayList<>();
+    private String name;
+    private int priority;
+    private ArrayList<Instructor> instructors = new ArrayList<>();
 
     public Course(String name, ArrayList<Instructor> instructors) {
         this.name = name;

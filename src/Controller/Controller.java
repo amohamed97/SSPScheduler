@@ -5,8 +5,8 @@ import Model.*;
 import java.util.*;
 
 public class Controller {
-    Schedule schedule;
-    List<Schedule> alternatives = new ArrayList<>();
+    private Schedule schedule;
+    private List<Schedule> alternatives = new ArrayList<>();
     private List<List<Node>> levels = new ArrayList<List<Node>>();
     private List<Node> level = new ArrayList<Node>();
     private ArrayList<Node> completed = new ArrayList<>();
@@ -28,8 +28,8 @@ public class Controller {
         Comparator<Course> crPrComp = (o1, o2) -> o2.getPriority()-o1.getPriority();
         Comparator<Instructor> inPrComp = (o1, o2) -> o2.getPriority()-o1.getPriority();
         courses.sort(crPrComp);
-        for (int i = 0; i < courses.size(); i++) {
-            courses.get(i).getInstructors().sort(inPrComp);
+        for (Course course : courses) {
+            course.getInstructors().sort(inPrComp);
         }
         for(int i = 0; i < courses.get(0).getInstructors().size();i++){
             for(int j = 0; j< courses.get(0).getInstructors().get(i).getGroups().size();j++){
