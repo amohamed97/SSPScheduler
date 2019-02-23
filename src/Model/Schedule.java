@@ -72,7 +72,7 @@ public class Schedule {
                 this.schedule[i][j] = schedule.getSchedule()[i][j];
             }
         }
-        this.priorityValue = schedule.getPriorityValue();
+//        this.priorityValue = schedule.getPriorityValue();
         this.daysTaken = schedule.getDaysTaken();
         for(int i = 0 ; i < 6 ; i++){
             this.days[i] = schedule.getDays()[i];

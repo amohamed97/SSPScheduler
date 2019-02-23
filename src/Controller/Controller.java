@@ -22,8 +22,11 @@ public class Controller {
         ArrayList<Course> courses = input.getCourses();
 //        ArrayList<Instructor> instructors = input.getInstructors();
         courses.get(2).setPriority(5);
+        courses.get(4).setPriority(4);
 //        courses.get(1).setPriority(3);
         courses.get(2).getInstructors().get(1).setPriority(5);
+        courses.get(4).getInstructors().get(2).setPriority(4);
+
 //        courses.get(1).getInstructors().get(1).setPriority(3);
         Comparator<Course> crPrComp = (o1, o2) -> o2.getPriority()-o1.getPriority();
         Comparator<Instructor> inPrComp = (o1, o2) -> o2.getPriority()-o1.getPriority();
@@ -47,8 +50,15 @@ public class Controller {
                     for(int o = 0 ; o < levels.get(i-1).size() ; o++){
                         if(!levels.get(i-1).get(o).checkClash(courses.get(i).getInstructors().get(j).getGroups().get(k),
                                 levels.get(i-1).get(o).getSchedule())) {
-                            levels.get(i-1).get(o).getSchedule().addToPriorityValue(courses.get(i).getInstructors().get(j).getPriority());
+//                            levels.get(i-1).get(o).getSchedule().addToPriorityValue(courses.get(i).getInstructors().get(j).getPriority());
+//                            add el node elly maskha delwa2ty
                             levels.get(i-1).get(o).addChild(courses.get(i).getInstructors().get(j).getGroups().get(k));
+//                            add priority el parent w instructor elly masko ll node elly et7tt
+                            levels.get(i-1).get(o).getChildren().get(levels.get(i-1).get(o).getChildren().size()-1).getSchedule().addToPriorityValue(
+                                    levels.get(i-1).get(o).getChildren().get(levels.get(i-1).get(o).getChildren().size()-1).getParent().getSchedule().getPriorityValue() +
+                                            courses.get(i).getInstructors().get(j).getPriority()
+                            );
+//                            by7t el node elly dt7tt fy el level bta3ha
                             levels.get(i).add(levels.get(i-1).get(o).getChildren().get(levels.get(i-1).get(o).getChildren().size()-1));
                             if(i == courses.size()-1){
                                 completed.add(levels.get(i-1).get(o).getChildren().get(levels.get(i-1).get(o).getChildren().size()-1));
