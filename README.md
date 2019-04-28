@@ -1,18 +1,7 @@
-# SSPScheduler
+SSP-Scheduler (specialized Scientific Programs in faculty of engineering, alexandria university)
 
-Project Missions :
-    1- Registration options.
-    2- Modifying existing schedule.
+Problem:
+Can't register the most wanted schedule with wanted instructors in each course during the courses regitration period.
 
---Mission#1
-    -Sort the arrayLists of courses and instructors according to their priority (instructor prioritization solution)
-    -Put the added groups in a stack and if there is a course that had a clash at all the groups , pop and remove the group
-    in the stack head and don't add it again(boolean in group class) (clash solution)
-    -When adding the first course , add the group with the minimum number of days , for the next courses add the group
-    with the most common days with the added groups (array of used days) (Minimum days solution)
-    -When excluding days from the normal 6 days , change the index of for loops  (Excluding days)
-    -Sort complete paths
-    
-    -other terms courses inclusion option
-    -handling distributed lectures
-    
+Solution:
+SSP-Scheduler which is a a project that helps students in SSP departments to make their schedules before the courses's registration period begin.It helps student to make the most wanted schedule with priorities of instructors of each course, minimum gaps during the day, minimum days during the week and with alternative schedule for each course.That's try to increase the opportunity of registring the most wanted schedule during the registration period.
